@@ -4,7 +4,7 @@
 Gunman Jean is a shooter in a pixelart side-scroller style, in which you `Gunman Jean` have to defend your base from evil demons which have conquered the world.
 > This game is made in Unity and open-source without any plugins
 
-![image info](./img/readme_img.png)
+![image info](./img/readme_img.PNG)
 
 ## 🧚 Story
 This game is based on a webseries, called [Zerberster](https://www.youtube.com/watch?v=dGRG39QhbZw&list=PLHMArgH9bh0uq-rIA4Yi-yeLiHL0rg9zT&ab_channel=ThomasHacker).
