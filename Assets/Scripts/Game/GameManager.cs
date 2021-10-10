@@ -9,6 +9,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject playerPrefab;
     [SerializeField] private Vector2 spawnPos;
 
+    [Header("Bounds")]
+    [SerializeField] private GameObject camera_bounds;
+
     private Camera cam;
 
     // Start is called before the first frame update
@@ -28,6 +31,6 @@ public class GameManager : MonoBehaviour
     {
         cam = Camera.main;
         GameObject playerObj = Instantiate(playerPrefab, spawnPos, Quaternion.identity);
-        cam.GetComponent<FollowPlayer>().set_player(playerObj);
+        cam.GetComponent<FollowPlayer>().set_player(playerObj, camera_bounds);
     }
 }

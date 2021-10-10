@@ -8,12 +8,17 @@ public class PlayerAnimator : MonoBehaviour
     [Header("Animation Speed")]
     [SerializeField] private float flip_time;
 
+    [Header("Shadow")]
+    [SerializeField] private GameObject shadow;
+    [SerializeField] private LayerMask layerMask;
+
     [Header("Bodypart")]
     public Animator head_anim;
     public Animator arms_anim;
     public Animator body_anim;
 
     private PlayerState playerState;
+    private CapsuleCollider2D collider;
 
     // Start is called before the first frame update
     void Start()
@@ -26,12 +31,16 @@ public class PlayerAnimator : MonoBehaviour
     {
         flip_player();
         body_animation();
+        arms_animation();
+        head_animation();
+        place_shadow();
     }
 
     // Initialize Components
     private void init_components()
     {
         playerState = GetComponent<PlayerState>();
+        collider = GetComponent<CapsuleCollider2D>();
     }
 
     private void flip_player()
@@ -49,8 +58,31 @@ public class PlayerAnimator : MonoBehaviour
     private void body_animation()
     {
         body_anim.SetBool("moving", playerState.get_moving());
+        body_anim.SetBool("grounded", playerState.get_on_ground());
         body_anim.SetFloat("looking_dir", playerState.get_dir());
         body_anim.SetFloat("moving_dir", playerState.get_moving_dir());
+    }
+
+    private void arms_animation()
+    {
+        arms_anim.SetBool("moving", playerState.get_moving());
+        arms_anim.SetBool("grounded", playerState.get_on_ground());
+        arms_anim.SetFloat("looking_dir", playerState.get_dir());
+        arms_anim.SetFloat("moving_dir", playerState.get_moving_dir());
+    }
+
+    private void head_animation()
+    {
+        head_anim.SetFloat("looking_vertical_dir", playerState.get_vertical_dir());
+    }
+
+    private void place_shadow()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(collider.bounds.center, Vector2.down, 100f, layerMask);
+        shadow.transform.position = new Vector2(shadow.transform.position.x, hit.transform.position.y);
+
+        Debug.DrawRay(collider.bounds.center+new Vector3(1f,0f,0f), Vector2.down * 100, Color.blue);
+
     }
 
 

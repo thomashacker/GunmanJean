@@ -1,8 +1,8 @@
 # 💣 Gunman Jean
 ## The last stand of pipe damm
 
-Gunman Jean is a shooter in a pixelart side-scroller style, in which you `Gunman Jean` have to defend your base from evil demons which have conquered the world.
-> This game is made in Unity and open-source without any plugins
+Gunman Jean is a `pixelart`, `side-scroller`, `rogue-like`, `shooter`, in which you, `Gunman Jean`, have to defend your base from evil demons.
+> This game is made in Unity and open-source. Every asset was created during development (no third party plugins & assets)
 
 ![image info](./img/readme_img.png)
 
@@ -10,18 +10,24 @@ Gunman Jean is a shooter in a pixelart side-scroller style, in which you `Gunman
 This game is based on a webseries, called [Zerberster](https://www.youtube.com/watch?v=dGRG39QhbZw&list=PLHMArgH9bh0uq-rIA4Yi-yeLiHL0rg9zT&ab_channel=ThomasHacker).
 It's about a dystopian world invaded by unknown alien forces simply known as 'demons'. In the second episode of the series, the protagonist `Jujuman` encounters the survivor `Gunman Jean` (played by Jean-Claude van Damme) who defended his base called `pipe damm`. 
 
-The story of the game picks up right after the attacks by `the` `demons` started and shows `Gunman Jeans` eternal struggle to survive.
-
 ## 💾 Development
 
-The game is currently in a migration phase to a newer version of unity (10.09.2021)
+The game is currently in a migration phase to a newer version of unity (10.10.2021)
 
-### Version 1 will include following features
-- 2-3 Enemy types
-- 2-3 Weapon types
-- 1 Level
-- 2-3 Buildable objects
+### Changelog
 
+**09.10.2021**
+- Starting migration process
+- Building map and setting colliders
+- Basic movement
+- General setup
+
+**10.10.2021**
+- Added more movement (Jumping)
+- Added Animations
+- Added Parallex
+- More Camera functionality
+- Adding barricades & dummy
 
 ## 🕹️ Itch.io
 
