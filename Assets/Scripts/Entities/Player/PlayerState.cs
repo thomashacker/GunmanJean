@@ -163,4 +163,13 @@ public class PlayerState : MonoBehaviour
         return diff_pos;
     }
 
+    public float get_rotation_z()
+    {
+        return rotation_z;
+    }
+
+    public float get_offset()
+    {
+        return rotation_offset;
+    }
 }

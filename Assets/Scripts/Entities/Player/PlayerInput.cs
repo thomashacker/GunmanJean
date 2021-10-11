@@ -14,10 +14,13 @@ public class PlayerInput : MonoBehaviour
     [SerializeField] private float vertical_input;
     [SerializeField] private bool space;
     [SerializeField] private bool key_s;
+    [SerializeField] private bool mouse_p;
+    [SerializeField] private bool mouse_s;
 
     // Update is called once per frame
     void Update()
     {
+        listen_mouse();
         listen_horizontal();
         listen_vertical();
         listen_key();
@@ -41,6 +44,12 @@ public class PlayerInput : MonoBehaviour
         space = Input.GetKey(KeyCode.Space);
     }
 
+    private void listen_mouse()
+    {
+        mouse_p = Input.GetMouseButtonDown(0);
+        mouse_s = Input.GetMouseButtonDown(1);
+    }
+
     public float get_horizontal()
     {
         return horizontal_input;
@@ -59,6 +68,16 @@ public class PlayerInput : MonoBehaviour
     public bool get_key_s()
     {
         return key_s;
+    }
+
+    public bool get_mouse_p()
+    {
+        return mouse_p;
+    }
+
+    public bool get_mouse_s()
+    {
+        return mouse_s;
     }
 
 
